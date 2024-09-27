@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>windows端的代理推荐？</title>
+      <link href="/2024/09/10/Windows%E7%AB%AF%E4%BB%A3%E7%90%86%E6%8E%A8%E8%8D%90/"/>
+      <url>/2024/09/10/Windows%E7%AB%AF%E4%BB%A3%E7%90%86%E6%8E%A8%E8%8D%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是科学上网？"><a href="#什么是科学上网？" class="headerlink" title="什么是科学上网？"></a>什么是科学上网？</h2><p>首先，我们需要先了解一下什么是科学上网？<br>Chatgpt对此的回答是“科学上网”通常指的是在中国大陆地区，通过一些技术手段绕过网络审查和限制，访问被屏蔽的国外网站和服务。由于中国实施的“防火长城”（Great Firewall）会限制对部分国际网站的访问（例如谷歌、Facebook、Twitter、YouTube等），因此许多人会通过使用虚拟专用网络（VPN）、代理服务器、或其他加密工具来实现“科学上网”。</p><p>因此通过正常的手段是无法浏览外网的，所以此时我们就需要使用一些加密手段的方式了————代理</p><hr><h2 id="Windows端代理"><a href="#Windows端代理" class="headerlink" title="Windows端代理"></a>Windows端代理</h2><p>Windows端的代理软件我推荐的有两个，一是V2rayn，还有一就是clash系列的<br>接下来先介绍clash系列的。</p><p>但令人不幸的是，clash的作者于2024年3月份的时候突然在GitHub上删库了！因此clash的原内核已经停止更新维护了，时间一久可能就会出现一些漏洞与bug，同时也会不太稳定。但是clash的内核现在又被其他大佬进行修改并持续更新，属于是clash的分支，现在已经是非常完善了，也是我目前最推荐的代理app了。</p><hr><h2 id="Clash-Verge"><a href="#Clash-Verge" class="headerlink" title="Clash Verge"></a>Clash Verge</h2><p>Clash Verge是目前最稳定的clash内核代理软件了，它的操作简便，上手很轻松，也是站长现在正在用的，其在GitHub上也有开源项目，并且保持着十分频繁的更新，所以会更加稳定。接下来会演示Clash Verge的下载使用。</p><p>Clash Verge的GitHub开源项目address：<a href="https://github.com/clash-verge-rev/clash-verge-rev">https://github.com/clash-verge-rev/clash-verge-rev</a> </p><p>GitHub在国内的访问速度很慢，甚至有很大的概率会登不上去，所以我在这里也为大家提供了直链下载地址，大家点击即可下载（注意：仅支持windows10及以上的系统使用）</p><p>直链下载地址：<a href="https://easylink.cc/hz0vwW">点击直接跳转下载</a></p><p>备用下载地址：<a href="https://wwvw.lanzouj.com/ivGQf2a24lsd">点击后跳转至蓝奏云盘下载</a> 密码：1dxe</p><hr><h2 id="导入订阅使用"><a href="#导入订阅使用" class="headerlink" title="导入订阅使用"></a>导入订阅使用</h2><p>下载安装后，打开Clash Verge，会看到这样的界面</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.twindy.top/file/1727432656378_picture01.png" alt="alt text"></p><p>接着我们点击左边的订阅，将自己的订阅链接复制进去，然后点击导入，等到出现订阅成功的弹窗后，就表明导入成功了，如果失败，就检查一下自己的订阅链接是否正确或者到期。</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.twindy.top/file/1727432653895_piture02.png" alt="alt text"></p><p>接着点击左边栏的代理，如果出现了节点信息，就说明成功了，然后选择一个节点，双击选中</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.twindy.top/file/1727432655428_piture03.png" alt="alt text"></p><p>选中完后，再点击左边栏的设置，将系统代理打开，然后就配置成功，可以使用了</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.twindy.top/file/1727432658996_piture04.png" alt="alt text"></p><hr><h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><p>你也可以对Clash Verge进行其他一些设置。</p><ul><li>开机自启<br>即开机后会自动启动Clash Verge，免去需要打开的繁琐步骤</li><li>静默启动<br>启动时不会弹出Clash Verge的界面</li><li>Tun模式<br>相当于全局代理模式，代理程序会创建一张虚拟网卡，通过配置操作系统的路由将网络请求重定向到这张虚拟网卡，代理程序从虚拟网卡中读取并处理这些网络请求。<br>使用Tun模式时需要先安装服务模式才能进行使用</li></ul><p>以上是Clash Verge的主要设置，你还可以更改他的主题，进行个性化设置</p><hr><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h5 id="无法启动-不显示界面-闪退-只显示托盘图标"><a href="#无法启动-不显示界面-闪退-只显示托盘图标" class="headerlink" title="无法启动&#x2F;不显示界面&#x2F;闪退&#x2F;只显示托盘图标"></a>无法启动&#x2F;不显示界面&#x2F;闪退&#x2F;只显示托盘图标</h5><p>问题原因</p><ul><li><p>Tauri 框架依赖于 <code>WebView2</code>。如果卸载或禁用了 <code>WebView2</code> ,将无法显示界面。具体表现为: 程序可以启动，但是点击托盘菜单没有反应。<br>解决方案</p></li><li><p>如果是利用第三方软件禁用了 <code>Edge</code>，请检查是否同时禁用了 <code>WebView2</code>，将 <code>WebView2</code> 取消禁用。</p></li><li><p>如果是卸载了 <code>WebView2</code>，可以<a href="https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/#download">下载 WebView2 安装包</a>，重新安装 WebView2。</p></li><li><p>如果是企业版系统或 Win7 无法安装 <code>WebView2</code>，请尝试在 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7">Release</a> 下载内置了 WebView2 的版本（带有 <code>fixed_webview2</code> 字样的安装包）。</p></li><li><p>若问题仍然存在，请尝试使用 Windows 7 兼容模式启动。</p></li></ul><hr><h5 id="Webview2-无法正常安装"><a href="#Webview2-无法正常安装" class="headerlink" title="Webview2 无法正常安装"></a>Webview2 无法正常安装</h5><p>问题原因</p><ul><li><p>可能是你的 <code>Windows</code> 系统关闭了自动更新。<br>解决方案</p></li><li><p>打开自动更新。</p></li><li><p>若实在无法安装 <code>WebView2</code>，可以尝试在Clash Verge的 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7">Release</a> 下载内置了WebView2的版本（带有 <code>fixed_webview2</code> 字样的安装包）。</p></li></ul><p>TWindy，</p><p>二〇二四年九月六日，</p><p><em>「有一部分朋友知道，我现在在探索的事情跟前端关系还挺近的啦。</em><br><em>希望我也能突破我自我驱动的局限性，多做一些更落地的事情吧！共勉！」</em></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 代理 </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
