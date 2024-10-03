@@ -1,0 +1,191 @@
+/* 鑳屾櫙涓庨〉闈㈠熀鏈牱寮� */
+body[data-type="anniversary"] #web_bg {
+    background: var(--anzhiyu-background);
+}
+
+body[data-type="anniversary"] #page {
+    border: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: 0 0 !important;
+}
+
+body[data-type="anniversary"] #page .page-title {
+    display: none;
+}
+
+/* 鍗＄墖鏁翠綋甯冨眬 */
+.anniversary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 鍝嶅簲寮忓竷灞€ */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 鍗＄墖鏍峰紡 */
+.anniversary-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.anniversary-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 鍗＄墖鏍囬鍜屽浘鏍囨按骞冲眳涓榻愮殑鏍峰紡 */
+.card-header {
+    display: flex;
+    justify-content: center; /* 姘村钩灞呬腑 */
+    align-items: center; /* 鍨傜洿灞呬腑 */
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* 鏂囨湰灞呬腑 */
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* 鍥炬爣涓庢爣棰樹箣闂寸殑闂磋窛 */
+}
+
+/* 鐧借壊鑳屾櫙鐨勪腑闂撮儴鍒� */
+.card-body {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+}
+
+/* 鍓╀綑澶╂暟涓�"澶╁悗"鐨勬牱寮� */
+.countdown-wrapper {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem; /* 璁剧疆鏁板瓧澶у皬 */
+    color: #6b4226; /* 璁剧疆鏁板瓧鐨勯鑹� */
+    font-weight: bold;
+}
+
+.days-label {
+    position: absolute;
+    top: -10px;
+    right: -45px;
+    background-color: #36c5b2;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    display: inline-block;
+}
+
+/* 鐩爣鏃ユ牱寮� */
+.target-info {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.target-label {
+    display: inline-block;
+    margin: 0; /* 鍘绘帀棰濆鐨勮竟璺� */
+    font-size: 1rem;
+    letter-spacing: 2px; /* 淇濇寔鏂囧瓧闂磋窛 */
+}
+
+.target-date {
+    display: inline-block; /* 鏀逛负inline-block锛岀洿鎺ヤ笌鐩爣鏃ユ爣绛惧榻� */
+    font-size: 1rem;
+    color: #333;
+    margin: 0; /* 鍘绘帀鎵€鏈夌殑涓婁笅杈硅窛 */
+    font-weight: normal; /* 鍘绘帀鍔犵矖鏁堟灉 */
+}
+
+/* 铏氱嚎鏍峰紡 */
+.dashed-line {
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+/* 鐩爣鏃ユ湡涓庡凡缁忚繃鍘荤殑澶╂暟淇℃伅 */
+.target-info, .total-days-info {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* 鍝嶅簲寮忓竷灞€浼樺寲锛岄€傞厤涓嶅悓璁惧 */
+@media (max-width: 768px) {
+    .anniversary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .anniversary-card {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* 鍔ㄧ敾鏁堟灉 */
+.anniversary-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.anniversary-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 鐗堟潈淇℃伅鐨勬牱寮� */
+.card-copyright {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777;
+    text-align: right;
+}
+
+.card-copyright a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card-copyright a:hover {
+    text-decoration: underline;
+}
+/* 鍒嗙粍鏍囬鍜屾弿杩版牱寮� */
+.anniversary-group {
+    margin-bottom: 40px;
+}
+
+.group-header {
+    text-align: left; /* 鍙冲榻� */
+    margin-bottom: 10px;
+}
+
+.group-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* 鍙冲榻� */
+}
+
+.group-desc {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left; /* 鍙冲榻� */
+}
