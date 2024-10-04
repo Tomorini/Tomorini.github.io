@@ -60,11 +60,11 @@
     
     
     
-    <category term="Github" scheme="https://www.twindy.top/tags/Github/"/>
-    
     <category term="教程" scheme="https://www.twindy.top/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://www.twindy.top/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Github" scheme="https://www.twindy.top/tags/Github/"/>
     
   </entry>
   
@@ -86,11 +86,11 @@
     
     
     
+    <category term="代理" scheme="https://www.twindy.top/tags/%E4%BB%A3%E7%90%86/"/>
+    
     <category term="教程" scheme="https://www.twindy.top/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://www.twindy.top/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="代理" scheme="https://www.twindy.top/tags/%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   

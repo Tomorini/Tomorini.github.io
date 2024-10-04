@@ -9,19 +9,19 @@ function initializeAnniversary() {
             return LunarDate(Year, Month, Day - 1);
         }
     }
-    // 璁＄畻涓や釜鏃ユ湡涔嬮棿鐨勫ぉ鏁板樊
+    // 计算两个日期之间的天数差
     function daysBetween(date1, date2) {
         const oneDay = 24 * 60 * 60 * 1000;
         return Math.floor((date2 - date1) / oneDay);
     }
-    // 璁＄畻涓や釜鏃ユ湡涔嬮棿鐨勫懆鏁板拰澶╂暟宸�
+    // 计算两个日期之间的周数和天数差
     function weeksAndDaysBetween(date1, date2) {
         const totalDays = daysBetween(date1, date2);
         const weeks = Math.floor(totalDays / 7);
         const days = totalDays % 7;
         return { weeks, days };
     }
-    // 璁＄畻涓や釜鏃ユ湡涔嬮棿鐨勬湀鏁板拰澶╂暟宸�
+    // 计算两个日期之间的月数和天数差
     function monthsAndDaysBetween(date1, date2) {
         let years = date2.getFullYear() - date1.getFullYear();
         let months = date2.getMonth() - date1.getMonth() + years * 12;
@@ -35,7 +35,7 @@ function initializeAnniversary() {
 
         return { months, days };
     }
-    // 鍓╀綑澶╂暟
+    // 剩余天数
     function daysLeft(dateStr, isLunar) {
         const [Year, Month, Day] = dateStr.split("-").map(Number);
         let now = new Date();
@@ -54,7 +54,7 @@ function initializeAnniversary() {
         }
         return daysBetween(now, anniversaryDate);
     }
-    // 缁忚繃澶╂暟
+    // 经过天数
     function totalDays(dateStr, isLunar) {
         const [Year, Month, Day] = dateStr.split("-").map(Number);
         let now = new Date();
@@ -67,7 +67,7 @@ function initializeAnniversary() {
         }
         return daysBetween(startDate, now);
     }
-    // 杩斿洖鐩爣鎴栬捣濮嬫棩鏈熶互鍙婃槦鏈熷嚑
+    // 返回目标或起始日期以及星期几
     function targetDate(dateStr, isLunar) {
         const [Year, Month, Day] = dateStr.split("-").map(Number);
         let now = new Date();
@@ -84,22 +84,22 @@ function initializeAnniversary() {
                 anniversaryDate = new Date(now.getFullYear() + 1, Month - 1, Day);
             }
         }
-        // 鑾峰彇鏄熸湡鍑�
+        // 获取星期几
         const weekDay = anniversaryDate.toLocaleDateString('zh-CN', { weekday: 'long' });
-        // 杩斿洖骞存湀鏃ュ姞鏄熸湡鍑�
+        // 返回年月日加星期几
         const year = anniversaryDate.getFullYear();
-        const month = (anniversaryDate.getMonth() + 1).toString().padStart(2, '0'); // 鏈堜唤浠�0寮€濮嬶紝闇€瑕佸姞1
+        const month = (anniversaryDate.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始，需要加1
         const day = anniversaryDate.getDate().toString().padStart(2, '0');
-        return `${year}-${month}-${day} (${weekDay})`; // 浣跨敤'-'浣滀负鍒嗛殧绗�
-        //   return anniversaryDate.toDateString();  // 鐩存帴杩斿洖鏂滄潌鏃ユ湡
+        return `${year}-${month}-${day} (${weekDay})`; // 使用'-'作为分隔符
+        //   return anniversaryDate.toDateString();  // 直接返回斜杆日期
         // return anniversaryDate.toLocaleDateString('zh-CN');
     }
-    // 杩斿洖鐩爣鎴栬捣濮嬫棩鏈燂紙鏍规嵁 displayMode锛�
+    // 返回目标或起始日期（根据 displayMode）
     function targetOrStartDate(dateStr, isLunar, displayMode) {
         if (displayMode === "elapsed") {
-            return dateStr; // 濡傛灉鏄痚lapsed妯″紡锛岀洿鎺ヨ繑鍥為厤缃殑鏃ユ湡锛堣捣濮嬫棩锛�
+            return dateStr; // 如果是elapsed模式，直接返回配置的日期（起始日）
         } else {
-            return targetDate(dateStr, isLunar); // 鍚﹀垯锛屾樉绀虹洰鏍囨棩鏈熷拰鏄熸湡鍑�
+            return targetDate(dateStr, isLunar); // 否则，显示目标日期和星期几
         }
     }
 
@@ -110,37 +110,37 @@ function initializeAnniversary() {
     countdownElements.forEach(function (elem) {
         const dateStr = elem.getAttribute("data-date");
         const isLunar = elem.hasAttribute("data-lunar");
-        const displayMode = elem.getAttribute("data-display-mode"); // 鑾峰彇 display_mode
+        const displayMode = elem.getAttribute("data-display-mode"); // 获取 display_mode
         // let daysText;
         if (displayMode === "elapsed") {
-            // 鍒濆鍖栨樉绀虹姸鎬佷负0锛堝ぉ鏁帮級
+            // 初始化显示状态为0（天数）
             elem.dataset.displayState = '0';
-            // 鏇存柊鏄剧ず
+            // 更新显示
             updateElapsedDisplay(elem, dateStr, isLunar, 0);
-            // 娣诲姞鐐瑰嚮浜嬩欢鐩戝惉鍣�
+            // 添加点击事件监听器
             elem.addEventListener('click', function () {
                 let currentState = parseInt(elem.dataset.displayState);
-                currentState = (currentState + 1) % 3; // 鍦�0銆�1銆�2涔嬮棿寰幆
+                currentState = (currentState + 1) % 3; // 在0、1、2之间循环
                 elem.dataset.displayState = currentState.toString();
                 updateElapsedDisplay(elem, dateStr, isLunar, currentState);
             });
         } else {
-            // 鏄剧ず鍓╀綑澶╂暟
+            // 显示剩余天数
             let daysText = daysLeft(dateStr, isLunar);
             elem.textContent = daysText;
-            elem.nextElementSibling.textContent = "澶╁悗"; // 鏄剧ず鈥滃ぉ鍚庘€�
+            elem.nextElementSibling.textContent = "天后"; // 显示“天后”
         }
     });
 
-    // 鏇存柊elapsed妯″紡涓嬬殑鏄剧ず鍐呭
+    // 更新elapsed模式下的显示内容
     function updateElapsedDisplay(elem, dateStr, isLunar, displayState) {
         if (displayState === 0) {
-            // 鏄剧ず宸茬粡杩囧幓鐨勫ぉ鏁�
+            // 显示已经过去的天数
             let days = totalDays(dateStr, isLunar);
             elem.textContent = days;
-            elem.nextElementSibling.textContent = "澶╀簡";
+            elem.nextElementSibling.textContent = "天了";
         } else if (displayState === 1) {
-            // 鏄剧ず宸茬粡杩囧幓鐨勫懆鏁板拰澶╂暟
+            // 显示已经过去的周数和天数
             const [Year, Month, Day] = dateStr.split("-").map(Number);
             let now = new Date();
             now = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -154,13 +154,13 @@ function initializeAnniversary() {
             let { weeks, days } = weeksAndDaysBetween(startDate, now);
             if (days === 0) {
                 elem.textContent = weeks;
-                elem.nextElementSibling.textContent = "鍛ㄤ簡";
+                elem.nextElementSibling.textContent = "周了";
             } else {
-                elem.textContent = `${weeks}鍛�${days}澶ー;
-                elem.nextElementSibling.textContent = "浜�";
+                elem.textContent = `${weeks}周${days}天`;
+                elem.nextElementSibling.textContent = "了";
             }
         } else if (displayState === 2) {
-            // 鏄剧ず宸茬粡杩囧幓鐨勬湀鏁板拰澶╂暟
+            // 显示已经过去的月数和天数
             const [Year, Month, Day] = dateStr.split("-").map(Number);
             let now = new Date();
             now = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -172,23 +172,23 @@ function initializeAnniversary() {
             }
 
             let { months, days } = monthsAndDaysBetween(startDate, now);
-            elem.textContent = `${months}鏈�${days}澶ー;
-            elem.nextElementSibling.textContent = "浜�";
+            elem.textContent = `${months}月${days}天`;
+            elem.nextElementSibling.textContent = "了";
         }
     }
 
-    // 鏄剧ず鐩爣鎴栬捣濮嬫棩鏈�
+    // 显示目标或起始日期
     const targetDateElements = document.querySelectorAll(".target-date");
     targetDateElements.forEach(function (elem) {
         const dateStr = elem.getAttribute("data-date");
         const isLunar = elem.hasAttribute("data-lunar");
-        const displayMode = elem.getAttribute("data-display-mode"); // 鑾峰彇 display_mode
+        const displayMode = elem.getAttribute("data-display-mode"); // 获取 display_mode
         elem.textContent = targetOrStartDate(dateStr, isLunar, displayMode);
     });
 }
 
-// 鍒濆椤甸潰鍔犺浇
+// 初始页面加载
 document.addEventListener("DOMContentLoaded", initializeAnniversary);
 
-// 閫傞厤 pjax
+// 适配 pjax
 document.addEventListener("pjax:complete", initializeAnniversary);
