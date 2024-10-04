@@ -79,9 +79,9 @@
   
   const config = {
     smallSrc: 'https://twindy-image.s3.bitiful.net/picture08_compressed.jpg', // 小图链接 尽可能配置小于100k的图片
-    largeSrc: 'https://imgbed.twindy.top/file/1727438596660_picture08.jpg', // 大图链接 最终显示的图片
+    largeSrc: 'https://twindy-image.s3.bitiful.net/picture83083', // 大图链接 最终显示的图片
     mobileSmallSrc: 'https://twindy-image.s3.bitiful.net/1727443700241_compressed.jpg', // 手机端小图链接 尽可能配置小于100k的图片
-    mobileLargeSrc: 'https://imgbed.twindy.top/file/1727443812246_1727443700241.jpg', // 手机端大图链接 最终显示的图片
+    mobileLargeSrc: 'https://twindy-image.s3.bitiful.net/picture137866', // 手机端大图链接 最终显示的图片
     enableRoutes: ['/'],
     };
   
